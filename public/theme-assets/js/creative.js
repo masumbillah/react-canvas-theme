@@ -56,7 +56,7 @@
         // Initialize WOW.js Scrolling Animations
         // eslint-disable-next-line no-undef
         new WOW().init();
-    });
+    }, 500);
 
 // eslint-disable-next-line no-undef
 })(jQuery); // End of use strict
