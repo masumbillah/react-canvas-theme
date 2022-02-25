@@ -1,10 +1,10 @@
 # React Image canvas app
 
-This app will be use image midify, create email template for images. It's developing only React js(latest version), Redux, Redux thunk and React dnd.
+This app will be use image midify, create email template for images. It's developing only React js(latest version), Redux, Redux thunk.
 
 
 ## Live demo
-[https://react-img-canvas.netlify.app](https://react-img-canvas.netlify.app/)
+[https://react-canvas-theme.herokuapp.com/](https://react-canvas-theme.herokuapp.com/)
 
 ## Get start for now
 
