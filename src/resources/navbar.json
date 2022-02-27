@@ -1,0 +1,28 @@
+{
+    "logo":{
+        "title": "Canvas",
+        "url": "theme-assets/img/logo.png"
+    },
+    "menus": [
+        {
+            "name":"About",
+            "url":"#about"
+        },
+        {
+            "name":"How it works",
+            "url":"#how-it-works"
+        },
+        {
+            "name":"Screenshots",
+            "url":"#screenshots"
+        },
+        {
+            "name":"Price",
+            "url":"#price"
+        },
+        {
+            "name":"Contact",
+            "url":"#contact"
+        }
+    ]
+}

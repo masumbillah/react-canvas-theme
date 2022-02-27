@@ -1,0 +1,95 @@
+[
+    {
+        "title":"Student",
+        "price":"Free",
+        "features": [
+            {
+                "name": "list item",
+                "isAvailable": true
+            },
+            {
+                "name": "list item",
+                "isAvailable": true
+            },
+            {
+                "name": "list item",
+                "isAvailable": false
+            },
+            {
+                "name": "list item",
+                "isAvailable": false
+            },
+            {
+                "name": "list item",
+                "isAvailable": false
+            },
+            {
+                "name": "list item",
+                "isAvailable": false
+            }
+        ]
+    },
+    {
+        "title":"Small",
+        "price":"$10",
+        "period": "Per Month",
+        "features": [
+            {
+                "name": "list item",
+                "isAvailable": true
+            },
+            {
+                "name": "list item",
+                "isAvailable": true
+            },
+            {
+                "name": "list item",
+                "isAvailable": true
+            },
+            {
+                "name": "list item",
+                "isAvailable": true
+            },
+            {
+                "name": "list item",
+                "isAvailable": false
+            },
+            {
+                "name": "list item",
+                "isAvailable": false
+            }
+        ]
+    },
+    {
+        "title":"Starndard",
+        "price":"$50",
+        "period": "Per Month",
+        "isStandard": true,
+        "features": [
+            {
+                "name": "list item",
+                "isAvailable": true
+            },
+            {
+                "name": "list item",
+                "isAvailable": true
+            },
+            {
+                "name": "list item",
+                "isAvailable": true
+            },
+            {
+                "name": "list item",
+                "isAvailable": true
+            },
+            {
+                "name": "list item",
+                "isAvailable": true
+            },
+            {
+                "name": "list item",
+                "isAvailable": true
+            }
+        ]
+    }
+]
