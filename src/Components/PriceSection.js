@@ -1,11 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
+import { connect } from "react-redux";
 
 //Component instance
 import SectionHeader from './Common/SectionHeader';
 
-//Load Resource data from json file. It will be api or somethings else.
-import planData from '../resources/price.json';
+
+import { planList } from "../services/actions/planListAction";
 
 //Start pricing plan 
 const PlanCard = (planInfo) => {
@@ -41,9 +42,8 @@ const PlanCard = (planInfo) => {
           </div>:null;
 };
 
-const PriceSection = () => {
-    const plans = planData || [],
-          sectionHeaderTitle = `Price <span>List</span>`,
+const PriceSection = ({loading, plans, error}) => {
+    const sectionHeaderTitle = `Price <span>List</span>`,
           sectionDescription = "Display your mobile apps awesome features with icon lists and an image carousel of each page. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation.";
   
     return (
@@ -54,12 +54,15 @@ const PriceSection = () => {
           <span className="angle"></span>
 
           <div className="row">
+            
             {/* Section header */}
             <SectionHeader title={sectionHeaderTitle} description={sectionDescription} />
 
+            {/* Start Plan cards here */}
             {plans.map((plan,index)=>{
                 return <PlanCard key={index} {...plan} />
             })}
+            {/* End Plan cards here */}
 
           </div>
         </div>   
@@ -69,4 +72,12 @@ const PriceSection = () => {
     );
 };
 
-export default PriceSection;
+//Get data from state management using by redux
+const mapStateToProps = (state) =>({
+  loading: state.planListReducer.loading,
+  plans: state.planListReducer.plans,
+  error: state.planListReducer.error
+});
+
+//Binding/Connect the component with redux 
+export default connect(mapStateToProps, planList())(PriceSection);

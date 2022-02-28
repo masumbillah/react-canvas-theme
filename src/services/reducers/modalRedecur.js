@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 //Redux types
 import { openModalType } from "../../types/services";
 
