@@ -1,16 +1,20 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
-import { connect } from "react-redux";
+import React, {useState} from 'react';
+import { connect, useDispatch } from "react-redux";
 
 //Component instance
 import SectionHeader from './Common/SectionHeader';
 
-
-import { planList } from "../services/actions/planListAction";
+import { planList, selectPlan } from "../services/actions/planListAction";
+import Modal from './Common/Modal';
+import Signup from './Registration/Signup';
+import AppHelpers from '../tools/App-helpers';
+import useSelectedPlan from '../hooks/useSelectedPlan';
 
 //Start pricing plan 
 const PlanCard = (planInfo) => {
     const planFeatures = (planInfo && planInfo.features) || [];
+    const {showModal} = planInfo;
 
     return !!planInfo? <div className="col-xs-12 col-sm-4 col-md-4 wow fadeInLeft animated" >
             <div className="price-wrapper ">
@@ -35,7 +39,8 @@ const PlanCard = (planInfo) => {
                   </ul>
                 </div>
                 <div className="sign-box">
-                  <a href="#"><span>Sign Up</span></a>			
+                   {/* eslint-disable-next-line no-script-url */}
+                  <a onClick={(e)=>showModal(e, planInfo.id)} href="#" ><span>Sign Up</span></a>			
                 </div>
               </div>
             </div>
@@ -43,9 +48,31 @@ const PlanCard = (planInfo) => {
 };
 
 const PriceSection = ({loading, plans, error}) => {
-    const sectionHeaderTitle = `Price <span>List</span>`,
+    const modalId = 'selectedPlanModal',
+          sectionHeaderTitle = `Price <span>List</span>`,
           sectionDescription = "Display your mobile apps awesome features with icon lists and an image carousel of each page. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation.";
-  
+    
+    const planList = plans;
+    const dispatch = useDispatch();
+
+    //
+    const [selectedPlanId, setSelectedPlanId] = useState(null);
+    dispatch(selectPlan(useSelectedPlan(selectedPlanId, planList)));
+    
+    //Selected plan handlder for buy/signup
+    const modalHandler = (e, planId) => {
+      e.preventDefault();
+      AppHelpers.openModal(modalId);
+      setSelectedPlanId(planId);
+    };
+
+    //Modal properties options
+    const modalOptions = {
+      title: 'Sign Up',
+      maxWidth: 350,
+      component: <Signup modalId={modalId} />,
+    };
+
     return (
       <section id="price" className="">
       {/* <!-- =============== container =============== --> */}
@@ -54,21 +81,21 @@ const PriceSection = ({loading, plans, error}) => {
           <span className="angle"></span>
 
           <div className="row">
-            
             {/* Section header */}
             <SectionHeader title={sectionHeaderTitle} description={sectionDescription} />
 
             {/* Start Plan cards here */}
             {plans.map((plan,index)=>{
-                return <PlanCard key={index} {...plan} />
+                return <PlanCard key={index} {...plan} showModal={modalHandler} />
             })}
             {/* End Plan cards here */}
 
           </div>
         </div>   
+        
         {/* <!-- =============== container end =============== -->   */}
+        <Modal modalId={modalId} options={modalOptions} />
       </section>
-
     );
 };
 

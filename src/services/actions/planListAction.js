@@ -1,5 +1,5 @@
 //Redux types
-import { planListSuccess } from "../../types/services";
+import { planListSuccess, selectedPlan } from "../../types/services";
 
 //Load Resource data from json file. It will be api or somethings else.
 import planData from '../../resources/price.json';
@@ -12,6 +12,19 @@ export const planList = () => {
           dispatch({
             type: planListSuccess,
             payload: plans
+        })
+    };
+};
+
+//Start actions methods for fetching data by API
+export const selectPlan = (plan) => {
+    const plans = planData || [];
+    
+    return (dispatch) => {
+          dispatch({
+            type: selectedPlan,
+            plans,
+            payload: plan
         })
     };
 };

@@ -408,7 +408,7 @@ header .header-content {
     -webkit-transition: all .3s easen 0s;
      -moz-transition: all .3s ease 0s;
 }
-#contact iframe {
+.contact-map iframe {
     transform: skewY(5.5deg);
 	-webkit-transform: skewY(5.5deg);
 	 -moz-transform: skewY(5.5deg);
@@ -439,7 +439,7 @@ header .header-content {
 #contact .headding h2 span {
     color: #fff;
 }
-#contact .map
+.contact-map .map
 {
 height:272px;
 }
@@ -1002,4 +1002,49 @@ height:272px;
 .textright {
     margin-top: 5px;
 }
+}
+
+.signup-form .form-group .form-control {
+    height: 45px;
+    box-shadow: none;
+}
+
+.modal-header .close {
+    margin-top: -21px;
+    margin-right: 10px;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    line-height: 0;
+}
+
+form .modal-footer {
+        padding: 15px 0px 0px 0px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #f84c25;
+    border-color: #f84c25;
+}
+
+.btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:active:hover, .open>.dropdown-toggle.btn-primary.focus, .open>.dropdown-toggle.btn-primary:focus, .open>.dropdown-toggle.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary:hover {
+    color: #fff;
+    background-color: #e6441f !important;
+    border-color: #e6441f !important;
+    outline: none;
+}
+
+.color-danger {
+    color: #f30000;
+}
+
+.btn-primary.disabled, .btn-primary.disabled.active, .btn-primary.disabled.focus, .btn-primary.disabled:active, .btn-primary.disabled:focus, .btn-primary.disabled:hover, .btn-primary[disabled], .btn-primary[disabled].active, .btn-primary[disabled].focus, .btn-primary[disabled]:active, .btn-primary[disabled]:focus, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary, fieldset[disabled] .btn-primary.active, fieldset[disabled] .btn-primary.focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary:hover {
+    color: #fff;
+    background-color: #e6441f !important;
+    border-color: #e6441f !important;
+    outline: none;
 }

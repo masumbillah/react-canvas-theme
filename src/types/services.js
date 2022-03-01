@@ -1,5 +1,3 @@
-//Media items of left panel
+//Plan list types for redux and others
 export const planListSuccess =  'plan_list_success';
-
-// Modal types
-export const openModalType =  'open_modal';
+export const selectedPlan =  'selected_plan';
