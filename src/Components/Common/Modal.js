@@ -1,8 +1,4 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
-
-
-///Start Navbar component 
+///Start Common modal wrrapper component 
 const Modal = ({modalId, options}) => {
     let { component, title, maxWidth } = options;
 

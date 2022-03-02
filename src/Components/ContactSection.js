@@ -1,10 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid, jsx-a11y/iframe-has-title */
-import React from 'react';
 import GoogleMap from './Common/GoogleMap';
 
 //Componant instance
 import SectionHeader from './Common/SectionHeader';
 
+//Start Contact us form
 const ContactForm = () => {
   return <form>
           <div className="ajax-hidden">
@@ -27,7 +27,8 @@ const ContactForm = () => {
         </form>
   };
 
-  const Address = () => {
+//Start contact address
+const Address = () => {
     return <section id="text-15" className="widget widget_text">
         <h3 className="widget-title">California, United States</h3>
         <div className="textwidget">785, Firs Avenue, place Mall,<br/>
@@ -38,7 +39,6 @@ const ContactForm = () => {
           </div>
       </section>;
   };
-
 
 const ContactSection = () => {
   const sectionHeaderTitle = `Contact <span>Us</span>`,
@@ -55,12 +55,15 @@ const ContactSection = () => {
 
           <div className="row">
             <div className="col-xs-12 col-sm-4 col-md-4 wow bounceIn animated" data-wow-delay=".1s">
+              {/* Load contact from */}
               <ContactForm />
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 wow bounceIn animated map" data-wow-delay=".5s">
+              {/* Load google map on contact section */}
               <GoogleMap customClass="contact-map"  />
             </div>
           <div className="col-xs-12 col-sm-4 col-md-4 wow bounceIn animated" data-wow-delay=".6s">
+              {/* Load contact address */}
               <Address />
           </div>                
         </div>

@@ -1,0 +1,37 @@
+{
+    "image": "theme-assets/img/slide-bg.png",
+    "leftWorks": [
+        {
+            "title":"Lorem ipsum",
+            "icon":"fa-apple",
+            "description":"Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum."
+        },
+        {
+            "title":"Lorem ipsum",
+            "icon":"fa-rocket",
+            "description":"Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum."
+        },
+        {
+            "title":"Lorem ipsum",
+            "icon":"fa-film",
+            "description":"Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum."
+        }
+    ],
+    "rightWorks": [
+        {
+            "title":"Lorem ipsum",
+            "icon":"fa-android",
+            "description":"Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum."
+        },
+        {
+            "title":"Lorem ipsum",
+            "icon":"fa-css3",
+            "description":"Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum."
+        },
+        {
+            "title":"Lorem ipsum",
+            "icon":"fa-users",
+            "description":"Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum."
+        }
+    ]
+}

@@ -1,6 +1,5 @@
-import React from 'react';
-
-///Start header component 
+/* eslint-disable jsx-a11y/iframe-has-title */
+///Start google map component 
 const GoogleMap = ({customClass}) => {
 
     return (

@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, {useState} from 'react';
+import {useState} from 'react';
 import AppHelpers from '../../tools/App-helpers';
 
 
@@ -42,7 +42,18 @@ const Signup = ({modalId}) => {
       }
 
       const disabledForm = () => {
-        return !(password && confirmPassword && password === confirmPassword && email && name);
+        return !(password && confirmPassword && password === confirmPassword
+             && email && isEmailValid(email) && name && isPhoneValid(phone));
+      };
+
+      const isEmailValid = (email) => {
+        if(email) return AppHelpers.isValidateEmail(email);
+        else return true;
+      };
+
+      const isPhoneValid = (phone) => {
+        if(phone) return AppHelpers.isValidatePhone(phone);
+        else return true;
       };
       
     return (
@@ -58,6 +69,9 @@ const Signup = ({modalId}) => {
                 <input type="email" placeholder="Enter email" required
                  onChange={(e)=>handleInputChange(e, 'email')} value={email} 
                 className="form-control" id="email" />
+                 {
+                    !isEmailValid(email)? (<small className="color-danger">Please enter valid email!</small>):''
+                }
             </div>
 
             <div className="form-group">
@@ -65,6 +79,10 @@ const Signup = ({modalId}) => {
                 <input type="phone" placeholder="Enter phone number"
                  onChange={(e)=>handleInputChange(e, 'phone')} value={phone} 
                  className="form-control" id="phone" />
+
+                {
+                    !isPhoneValid(phone)? (<small className="color-danger">Please enter valid phone!</small>):''
+                }               
             </div>
 
             <div className="form-group">

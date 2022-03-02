@@ -1,4 +1,3 @@
-import React from 'react';
 import instruction from '../resources/instruction.txt'
 
 ///Start header component 

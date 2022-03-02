@@ -1,13 +1,27 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import React from 'react';
+import {useEffect, useState} from 'react';
 
 //Componant instance
 import SectionHeader from './Common/SectionHeader';
+import AppHelpers from '../tools/App-helpers';
+
+//Data resouces 
+import screenshotsData from '../resources/screenshots.json';
 
 const ScreenshotSection = () => {
 
-  const sectionHeaderTitle = `Screen <span>Shots</span>`,
-        sectionDescription = "Display your mobile apps awesome features with icon lists and an image carousel of each page. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation.";
+  const [screenshots, setScreenshots] = useState([]);
+  const sectionHeaderTitle = `Screen <span>Shots</span>`;
+  const sectionDescription = "Display your mobile apps awesome features with icon lists and an image carousel of each page. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation.";
+        
+    useEffect(()=>{
+      
+      //If we getting data from api or somethings else then define init slider after data load 
+      setScreenshots(screenshotsData);
+      AppHelpers.initSlider('js-screenshot-slider');
+
+    },[screenshots])
+
 
     return (
       <section id="screenshots" className="">
@@ -27,59 +41,31 @@ const ScreenshotSection = () => {
               <div className="col-xs-12 col-sm-12 col-md-12 wow zoomIn animated textright" data-wow-delay=".1s">           
                    <div className="span12">
 
-                          <div id="owl-demo" className="owl-carousel">
-                            <div className="item">
-                                <div className="imghover" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
-                                  <img src="theme-assets/img/owl1.jpg" alt="Owl Image" />         
-                                <div className="hover-bg"><i className="fa fa-camera camera"></i></div>                 
-                                </div> 
-                            </div>
-                            <div className="item">
-                                <div className="imghover" data-toggle="modal" data-target="#exampleModa2" data-whatever="@mdo">
-                                <img src="theme-assets/img/owl2.jpg" alt="Owl Image" />
-                                 <div className="hover-bg"><i className="fa fa-camera camera"></i></div>                 
-                                </div>
-                            </div>
-                           <div className="item">
-                                <div className="imghover" data-toggle="modal" data-target="#exampleModa3" data-whatever="@mdo">
-                                <img src="theme-assets/img/owl3.jpg" alt="Owl Image" />
-                                 <div className="hover-bg"><i className="fa fa-camera camera"></i></div>                 
-                                </div>
-                            </div> 
-                            <div className="item">
-                                <div className="imghover" data-toggle="modal" data-target="#exampleModa4" data-whatever="@mdo">
-                                <img src="theme-assets/img/owl4.jpg" alt="Owl Image" />
-                                 <div className="hover-bg"><i className="fa fa-camera camera"></i></div>                 
-                                </div>
-                            </div>
+                          <div id="js-screenshot-slider" className="owl-carousel">
+                            {
+                              screenshots.length? screenshots.map((screenshot, index)=>{
+                               return <div key={`screen_${index}`} className="item">
+                                        <div className="imghover" data-toggle="modal" data-target={`#exampleModal${screenshot.id}`} data-whatever="@mdo">
+                                          <img src={screenshot.image} alt={screenshot.name} />         
+                                        <div className="hover-bg"><i className="fa fa-camera camera"></i></div>                 
+                                        </div> 
+                                      </div>
+                              }):''
+                            }
                           </div>              
                         </div>     
                           
-            </div>     
+              </div>     
               {/* <!-- =============== popup large image =============== --> */}
-              <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-              <div className="modal-dialog" role="document">
-                <img src="theme-assets/img/owl1.jpg" alt="Owl Image" />
-              </div>
-             </div>
-
-             <div className="modal fade" id="exampleModa2" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabe2">
-              <div className="modal-dialog" role="document">
-                <img src="theme-assets/img/owl2.jpg" alt="Owl Image" />
-              </div>
-             </div>
-             
-             <div className="modal fade" id="exampleModa3" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabe3">
-              <div className="modal-dialog" role="document">
-                <img src="theme-assets/img/owl3.jpg" alt="Owl Image" />
-              </div>
-             </div>
-             
-             <div className="modal fade" id="exampleModa4" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabe4">
-              <div className="modal-dialog" role="document">
-                <img src="theme-assets/img/owl4.jpg" alt="Owl Image" />
-              </div>
-             </div>
+                {
+                  screenshots.length? screenshots.map((screenshot, index)=>{
+                    return <div key={`screen_popup_${index}`} className="modal fade" id={`exampleModal${screenshot.id}`} tabIndex="-1" role="dialog" aria-labelledby={`#exampleModalLabel${screenshot.id}`}>
+                            <div className="modal-dialog" role="document">
+                              <img src={screenshot.image} alt={screenshot.name} />         
+                            </div>
+                          </div>
+                  }):''
+                }
     		 {/* <!-- =============== popup large image end =============== --> */}
           </div>
         </div>

@@ -1,5 +1,3 @@
-import React from 'react';
-
 ///Start section header component 
 const SectionHeader = ({title, description}) => {
     return (

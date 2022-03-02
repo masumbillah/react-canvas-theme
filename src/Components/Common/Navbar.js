@@ -1,9 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
-
 //Load Resource data from json file. It will be api or somethings else.
 import navData from '../../resources/navbar.json';
-
 
 ///Start Navbar component 
 const Navbar = () => {

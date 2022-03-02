@@ -1,0 +1,22 @@
+[
+    {
+        "id":1,
+        "name":"Screenshot 01",
+        "image":"theme-assets/img/owl1.jpg"
+    },
+    {
+        "id":2,
+        "name":"Screenshot 02",
+        "image":"theme-assets/img/owl2.jpg"
+    },
+    {
+        "id":3,
+        "name":"Screenshot 03",
+        "image":"theme-assets/img/owl3.jpg"
+    },
+    {
+        "id":4,
+        "name":"Screenshot 04",
+        "image":"theme-assets/img/owl4.jpg"
+    }
+]
