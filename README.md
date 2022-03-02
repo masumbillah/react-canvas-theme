@@ -22,11 +22,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm run test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
+# Test Case
+You didn't mention test case for the react project. So I didn't implement test case. 
+If you want see test case. So please install and run my another repo for it.
+[https://github.com/masumbillah/react-canvas]https://github.com/masumbillah/react-canvas
 
 ## Documentation for Developers
 
@@ -56,8 +55,6 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
       - App.js
       - App.test.js
       - index.js
-      - setupTests.js
-
 
 ### Folder/Files Details
   #### 1. public:
