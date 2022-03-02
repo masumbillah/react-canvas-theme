@@ -78,12 +78,43 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
    
    a. Components: The folders contain all react components. there are sections and common components.
 
+    - Components
+         - Common
+         - Registration
+         - AboutSection.js
+         - ContactSection.js
+         - HeaderSection.js
+         - PriceSection.js
+         - ScreenshotSection.js
+         - WorkSection.js 
+         
    b. hooks: We are define varous custom hooks the folder.
-
+         
+    - hooks
+         - useSelectedPlan.js
+      
    c. resources: I'm using the folder for give theme dynamic data. It will be depend on your theme category. If you want to data by API so no need it.
 
+    - resources
+         - instructions.txt
+         - navbar.json
+         - price.json
+         - screenshots.json
+         - work.json  
+
    d. services: Services forlder basically redux method. Here define redux actions, reducer and store.
+   
+    - services
+         - actions
+         - reducers
+         - store.js  
 
    c. tools: Tools forlder contain varisous js or others helper method. like as common app helpers and others.
+   
+    - tools
+         - App-helpers.js
 
    e. types: I'm using types functionality. So all types define here. I used only redux types from here.
+      
+    - types
+         - services.js
