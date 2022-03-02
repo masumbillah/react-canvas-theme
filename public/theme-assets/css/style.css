@@ -748,7 +748,7 @@ height:272px;
 }
 .angle::before {
     border-bottom: 72px solid #333;
-    border-right: 600px solid transparent;
+    border-right: 550px solid transparent;
     left: 0;
 }
 .angle::before, .angle::after {
@@ -761,12 +761,12 @@ height:272px;
 }
 .angle::after {
     border-bottom: 72px solid #333;
-    border-left: 600px solid transparent;
+    border-left: 550px solid transparent;
     right: 0;
 }
 .angle2::before {
     border-top: 72px solid #333;
-    border-right: 600px solid transparent;
+    border-right: 480px solid transparent;
     left: 0;
 }
 .angle2::before, .angle2::after {
@@ -779,7 +779,7 @@ height:272px;
 }
 .angle2::after {
     border-top: 72px solid #333;
-    border-left: 600px solid transparent;
+    border-left: 480px solid transparent;
     right: 0;
 }
 }
@@ -831,7 +831,7 @@ height:272px;
 }
 .angle::before {
     border-bottom: 30px solid #333;
-    border-right: 960px solid transparent;
+    border-right: 768px solid transparent;
     left: 0;
 }
 .angle::before, .angle::after {
@@ -849,7 +849,7 @@ height:272px;
 }
 .angle2::before {
     border-top: 30px solid #333;
-    border-right: 960px solid transparent;
+    border-right: 768px solid transparent;
     left: 0;
 }
 .angle2::before, .angle2::after {
@@ -867,6 +867,23 @@ height:272px;
 }
 
 }
+
+
+@media (min-width:680px) and (max-width:785px) {
+
+    .angle::before {
+        border-bottom: 30px solid #333;
+        border-right: 670px solid transparent;
+        left: 0;
+    }
+
+    .angle2::before {
+        border-top: 30px solid #333;
+        border-right: 670px solid transparent;
+        left: 0;
+    }
+}
+
 @media (max-width:480px) 
 {
     header {  
@@ -914,7 +931,7 @@ height:272px;
 }
 .angle::before {
     border-bottom: 30px solid #333;
-    border-right: 480px solid transparent;
+    border-right: 385px solid transparent;
     left: 0;
 }
 .angle::before, .angle::after {
@@ -932,7 +949,7 @@ height:272px;
 }
 .angle2::before {
     border-top: 30px solid #333;
-    border-right: 480px solid transparent;
+    border-right: 385px solid transparent;
     left: 0;
 }
 .angle2::before, .angle2::after {
